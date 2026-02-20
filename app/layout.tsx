@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/avatar.jpg",
-    apple: "/avatar.jpg",
+    icon: "/assets/images/profile/avatar.jpg",
+    apple: "/assets/images/profile/avatar.jpg",
   },
   openGraph: {
     title: "Nikita Biichuk - Full Stack Web Developer Portfolio",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Nikita Biichuk's Portfolio",
     images: [
       {
-        url: "/avatar.jpg",
+        url: "/assets/images/profile/avatar.jpg",
         width: 1200,
         height: 630,
         alt: "Nikita Biichuk - Full Stack Web Developer",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     creator: "@nikitabiichuk",
     title: "Nikita Biichuk - Full Stack Web Developer",
     description,
-    images: ["/avatar.jpg"],
+    images: ["/assets/images/profile/avatar.jpg"],
   },
   verification: {
     // Add Google Search Console verification when available

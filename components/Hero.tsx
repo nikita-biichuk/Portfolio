@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   const checkCv = () => {
-    window.open("/NikitaBiichukResume.pdf", "_blank");
+    window.open("/assets/documents/NikitaBiichukResume.pdf", "_blank");
   };
 
   return (
@@ -43,13 +43,12 @@ const Hero = () => {
       </div>
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w[60vw] flex flex-col justify-center items-center">
-          <div className="size-44 md:size-48 lg:size-56 rounded-full overflow-hidden mb-6">
+          <div className="relative size-44 md:size-48 lg:size-56 rounded-full overflow-hidden mb-6">
             <Image
-              src="/avatar.jpg"
+              src="/assets/images/profile/avatar.jpg"
               alt="Nikita Biichuk - Full Stack Web Developer from Ukraine"
-              width={250}
-              height={250}
-              objectFit="cover"
+              fill
+              className="object-cover object-[50%_65%]"
               priority
             />
           </div>

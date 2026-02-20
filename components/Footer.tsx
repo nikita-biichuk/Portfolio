@@ -33,7 +33,7 @@ const Footer = () => {
                   >
                     <Link href={link.link}>
                       <img
-                        src={`/assets${link.img}`}
+                        src={link.img}
                         className="w-20 h-20"
                         alt="social media icon"
                       />

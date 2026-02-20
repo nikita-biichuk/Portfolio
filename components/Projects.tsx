@@ -25,7 +25,7 @@ const Projects = () => {
                  overflow-hidden h-[25vh] lg:h-[32.5vh] mb-10"
                 >
                   <div className="relative w-full h-full rounded-3xl overflow-hidden bg-[#13162D">
-                    <img src="/assets/bg.png" alt="bg image" />
+                    <img src="/assets/images/backgrounds/bg.png" alt="bg image" />
                   </div>
                   <img
                     src={img}
@@ -34,7 +34,7 @@ const Projects = () => {
                   />
                 </div>
                 <div className="flex flex-col flex-2">
-                  <h1 className="font-bold lg:text-2xl md:text-xl text-lg libe-clamp-1">
+                  <h1 className="font-bold lg:text-2xl md:text-xl text-lg line-clamp-1">
                     {title}
                   </h1>
                   <p className="lg:text-xl font-normal text-sm line-clamp-2">

@@ -15,7 +15,7 @@ export default function Home() {
     "name": "Nikita Biichuk",
     "jobTitle": "Full Stack Web Developer",
     "url": "https://nikita-biichuks-portfolio.vercel.app",
-    "image": "https://nikita-biichuks-portfolio.vercel.app/avatar.jpg",
+    "image": "https://nikita-biichuks-portfolio.vercel.app/assets/images/profile/avatar.jpg",
     "sameAs": [
       "https://github.com/nikitabiichuk2009",
       "https://twitter.com/nikitabiichuk"
