@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import Image from "next/image";
 import { FaLocationArrow, FaFilePdf } from "react-icons/fa";
@@ -8,6 +8,8 @@ import SeeMyWorkButton from "./ui/SeeMyWorkButton";
 import ViewCvButton from "./ui/view-cv-button";
 
 const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
@@ -44,12 +46,22 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w[60vw] flex flex-col justify-center items-center">
           <div className="relative size-44 md:size-48 lg:size-56 rounded-full overflow-hidden mb-6">
+            {/* Skeleton placeholder while image loads */}
+            {!imageLoaded && (
+              <div
+                className="absolute inset-0 rounded-full bg-white/10 dark:bg-white/5 animate-pulse"
+                aria-hidden
+              />
+            )}
             <Image
               src="/assets/images/profile/avatar.jpg"
-              alt="Nikita Biichuk - Full Stack Web Developer from Ukraine"
+              alt="Nikita Biichuk"
               fill
-              className="object-cover object-[50%_65%]"
+              className={`object-cover object-[50%_65%] transition-opacity duration-300 ${
+                imageLoaded ? "opacity-100" : "opacity-0"
+              }`}
               priority
+              onLoadingComplete={() => setImageLoaded(true)}
             />
           </div>
           <h2 className="uppercase tracking-widest text-xs text-blue-100 max-w-80 text-center">
