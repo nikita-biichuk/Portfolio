@@ -295,12 +295,12 @@ export const socialMedia = [
   {
     id: 1,
     img: "/assets/icons/social/git.svg",
-    link: "https://github.com/nikitabiichuk2009",
+    link: "https://github.com/nikita-biichuk",
   },
   {
     id: 2,
     img: "/assets/icons/social/insta.svg",
-    link: "https://www.instagram.com/nikitabiichuk1/",
+    link: "https://www.instagram.com/nikita_biichuk/",
   },
   {
     id: 3,
