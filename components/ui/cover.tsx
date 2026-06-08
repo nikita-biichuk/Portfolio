@@ -2,7 +2,9 @@
 import React, { useEffect, useId, useState } from "react";
 import { AnimatePresence, m } from "framer-motion";
 import { useRef } from "react";
+
 import { cn } from "@/lib/utils";
+
 import { SparklesCore } from "./sparkles";
 
 export const Cover = ({
@@ -17,20 +19,24 @@ export const Cover = ({
   const ref = useRef<HTMLDivElement>(null);
 
   const [containerWidth, setContainerWidth] = useState(0);
-  const [beamPositions, setBeamPositions] = useState<number[]>([]);
+  type BeamData = { position: number; duration: number; delay: number };
+  const [beamPositions, setBeamPositions] = useState<BeamData[]>([]);
 
   useEffect(() => {
     if (ref.current) {
-      setContainerWidth(ref.current?.clientWidth ?? 0);
+      setContainerWidth(ref.current.clientWidth ?? 0);
 
-      const height = ref.current?.clientHeight ?? 0;
-      const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control the spacing
-      const positions = Array.from(
-        { length: numberOfBeams },
-        (_, i) => (i + 1) * (height / (numberOfBeams + 1))
-      );
-      setBeamPositions(positions);
+      const height = ref.current.clientHeight ?? 0;
+      const numberOfBeams = Math.floor(height / 10);
+      const data = Array.from<unknown, BeamData>({ length: numberOfBeams }, (_, i) => ({
+        position: (i + 1) * (height / (numberOfBeams + 1)),
+        duration: Math.random() * 2 + 1,
+        delay: Math.random() * 2 + 1,
+      }));
+      setBeamPositions(data);
     }
+    // ref.current is intentionally used as dep to re-measure after mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/refs
   }, [ref.current]);
 
   return (
@@ -86,15 +92,15 @@ export const Cover = ({
           </m.div>
         )}
       </AnimatePresence>
-      {beamPositions.map((position, index) => (
+      {beamPositions.map((beam, index) => (
         <Beam
           key={index}
           hovered={hovered}
-          duration={Math.random() * 2 + 1}
-          delay={Math.random() * 2 + 1}
+          duration={beam.duration}
+          delay={beam.delay}
           width={containerWidth}
           style={{
-            top: `${position}px`,
+            top: `${beam.position}px`,
           }}
         />
       ))}
@@ -156,6 +162,10 @@ export const Beam = ({
   width?: number;
 } & React.ComponentProps<typeof m.svg>) => {
   const id = useId();
+  // eslint-disable-next-line react-hooks/purity
+  const randomDelay = useRef(Math.random() * 0.8 + 0.2);
+  // eslint-disable-next-line react-hooks/purity
+  const randomRepeatDelay = useRef(Math.random() + 1);
 
   return (
     <m.svg
@@ -186,13 +196,15 @@ export const Beam = ({
             y1: 0,
             y2: 0,
           }}
+          /* eslint-disable react-hooks/refs */
           transition={{
             duration: hovered ? 0.5 : (duration ?? 2),
             ease: "linear",
             repeat: Infinity,
-            delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
-            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : (delay ?? 1),
+            delay: hovered ? randomDelay.current : 0,
+            repeatDelay: hovered ? randomRepeatDelay.current : (delay ?? 1),
           }}
+          /* eslint-enable react-hooks/refs */
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />
           <stop stopColor="#3b82f6" />

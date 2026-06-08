@@ -5,6 +5,7 @@ import { encode } from "qss";
 import React from "react";
 import { AnimatePresence, m, useMotionValue, useSpring } from "framer-motion";
 import Link from "next/link";
+
 import { cn } from "@/lib/utils";
 
 type LinkPreviewProps = {
@@ -47,6 +48,7 @@ export const LinkPreview = ({
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
   }, []);
 
@@ -55,7 +57,7 @@ export const LinkPreview = ({
 
   const translateX = useSpring(x, springConfig);
 
-  const handleMouseMove = (event: any) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
     const targetRect = event.target.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
     const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle

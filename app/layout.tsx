@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import { routing } from "@/i18n/routing";
-import "./globals.css";
-import { ThemeProvider } from "./provider";
-import { Toaster } from "@/components/ui/sonner";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
+import { Toaster } from "@/components/ui/sonner";
+
+import "./globals.css";
+import { ThemeProvider } from "./provider";
 
 export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",

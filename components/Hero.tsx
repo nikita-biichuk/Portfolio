@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { FaFilePdf, FaLocationArrow } from "react-icons/fa";
+
 import { Spotlight } from "./ui/Spotlight";
 import { Cover } from "./ui/cover";
 import SeeMyWorkButton from "./ui/SeeMyWorkButton";

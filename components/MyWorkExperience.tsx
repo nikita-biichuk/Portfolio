@@ -1,7 +1,9 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+
 import { workExperience } from "@/data";
+
 import { Button } from "./ui/MovingBorder";
 
 const MyWorkExperience = () => {

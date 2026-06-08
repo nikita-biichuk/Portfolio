@@ -1,9 +1,10 @@
-import { FloatingControls } from "@/components/FloatingControls";
-import { routing } from "@/i18n/routing";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+import { routing } from "@/i18n/routing";
+import { FloatingControls } from "@/components/FloatingControls";
 
 const siteUrl = "https://nikita-biichuks-portfolio.vercel.app";
 const openGraphLocaleMap = {

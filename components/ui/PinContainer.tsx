@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { m } from "framer-motion";
-import { cn } from "@/utils/cn";
 import Link from "next/link";
+
+import { cn } from "@/utils/cn";
 
 export const PinContainer = ({
   children,
@@ -54,7 +55,6 @@ export const PinContainer = ({
 
 export const PinPerspective = ({
   title,
-  href,
   hovered,
 }: {
   title?: string;

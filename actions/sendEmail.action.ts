@@ -15,7 +15,7 @@ export async function sendEmail({
   email,
   phone,
   message,
-}: EmailParams): Promise<{ success: boolean; error?: any }> {
+}: EmailParams): Promise<{ success: boolean; error?: unknown }> {
   const transporter = nodemailer.createTransport({
     service: "Gmail", // You can use any email service you prefer
     auth: {

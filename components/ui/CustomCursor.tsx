@@ -16,6 +16,7 @@ export function CustomCursor() {
 
   useEffect(() => {
     if (!window.matchMedia("(pointer: fine)").matches) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsTouch(false);
 
     const onMove = (e: MouseEvent) => {

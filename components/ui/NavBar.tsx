@@ -5,7 +5,9 @@ import { AnimatePresence, m, useMotionValueEvent, useScroll } from "framer-motio
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { cn } from "@/utils/cn";
+
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "./dialog";
 
 type NavItem = {

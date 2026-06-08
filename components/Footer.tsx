@@ -5,8 +5,9 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { socialMedia } from "@/data";
 import dynamic from "next/dynamic";
+
+import { socialMedia } from "@/data";
 const ContactForm = dynamic(
   () => import("./ContactForm").then((mod) => ({ default: mod.ContactForm })),
   { ssr: false, loading: () => <div className="h-[420px]" /> }

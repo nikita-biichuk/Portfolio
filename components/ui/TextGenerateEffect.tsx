@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { m, stagger, useAnimate } from "framer-motion";
+
 import { cn } from "@/utils/cn";
 
 export const TextGenerateEffect = ({
@@ -13,7 +14,7 @@ export const TextGenerateEffect = ({
   numberForColor: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
   useEffect(() => {
     animate(
       "span",
@@ -25,6 +26,7 @@ export const TextGenerateEffect = ({
         delay: stagger(0.2),
       }
     );
+  // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/refs
   }, [scope.current]);
 
   const renderWords = () => {

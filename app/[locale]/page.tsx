@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import { hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { CgWebsite } from "react-icons/cg";
+import { FaHome, FaUser } from "react-icons/fa";
+import { MdContactPhone } from "react-icons/md";
+
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -8,12 +15,6 @@ import { AnimateOnView } from "@/components/ui/AnimateOnView";
 import { FloatingNav } from "@/components/ui/NavBar";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { routing } from "@/i18n/routing";
-import { hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
-import { CgWebsite } from "react-icons/cg";
-import { FaHome, FaUser } from "react-icons/fa";
-import { MdContactPhone } from "react-icons/md";
 
 type Props = {
   params: Promise<{ locale: string }>;

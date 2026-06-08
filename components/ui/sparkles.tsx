@@ -1,10 +1,11 @@
 "use client";
-import React, { useId, useMemo } from "react";
+import React, { useId } from "react";
 import Particles, { ParticlesProvider, useParticlesProvider } from "@tsparticles/react";
 import type { Container } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
-import { cn } from "@/lib/utils";
 import { m, useAnimation } from "framer-motion";
+
+import { cn } from "@/lib/utils";
 
 const initEngine = async (engine: Parameters<typeof loadSlim>[0]) => {
   await loadSlim(engine);

@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { projects } from "@/data";
 import { FaLocationArrow } from "react-icons/fa";
+
+import { projects } from "@/data";
+
 import { PinContainer } from "./ui/PinContainer";
 import { AnimateOnView } from "./ui/AnimateOnView";
 
@@ -64,7 +66,7 @@ const Projects = () => {
                           className="border border-border rounded-full bg-zinc-900
                         lg:w-10 lg:h-10 h-8 w-8 flex justify-center items-center"
                         >
-                          <img src={`/assets/${icon}`} alt={icon} className="p-1" />
+                          <Image src={`/assets/${icon}`} alt={icon} className="p-1" width={32} height={32} style={{ height: "auto" }} />
                         </div>
                       );
                     })}

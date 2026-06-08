@@ -2,6 +2,7 @@ import { CheckIcon, ChevronsUpDown } from "lucide-react";
 import * as React from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
+
 import { cn } from "@/lib/utils";
 import {
   Command,
@@ -12,6 +13,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+
 import { Button } from "./button";
 import { Input, InputProps } from "./Input";
 import { ScrollArea } from "./scroll-area";
@@ -40,7 +42,7 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> = React.forwa
         />
       )}
       inputComponent={InputComponent}
-      // @ts-ignore
+      // @ts-expect-error — react-phone-number-input types don't match the generic onChange signature
       onChange={(value) => onChange?.(value || "")}
       {...props}
     />

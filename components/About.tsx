@@ -4,7 +4,9 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, m } from "framer-motion";
 import dynamic from "next/dynamic";
+
 import { courses } from "@/data";
+
 const CanvasRevealEffect = dynamic(
   () => import("./ui/CanvasRevealEffect").then((mod) => ({ default: mod.CanvasRevealEffect })),
   { ssr: false, loading: () => null }
@@ -219,7 +221,7 @@ const AceternityIcon = ({ title, accentClass }: { title: string; accentClass?: s
   );
 };
 
-export const Icon = ({ className, ...rest }: any) => {
+export const Icon = ({ className, ...rest }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
