@@ -42,7 +42,6 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> = React.forwa
         />
       )}
       inputComponent={InputComponent}
-      // @ts-expect-error — react-phone-number-input types don't match the generic onChange signature
       onChange={(value) => onChange?.(value || "")}
       {...props}
     />
