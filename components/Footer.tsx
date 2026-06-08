@@ -9,7 +9,7 @@ const Footer = () => {
       className="pb-32 md:pb-28 xl:pb-20 pt-36 w-full relative"
       id="contact"
     >
-      <div className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black/[0.03] flex items-center justify-center">
+      <div className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white bg-grid-black flex items-center justify-center">
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="flex flex-col lg:max-w-[45vw] relative z-10">
