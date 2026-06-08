@@ -24,16 +24,8 @@ type ParticlesProps = {
 
 const SparklesCoreInner = (props: ParticlesProps) => {
   const { loaded } = useParticlesProvider();
-  const {
-    id,
-    className,
-    background,
-    minSize,
-    maxSize,
-    speed,
-    particleColor,
-    particleDensity,
-  } = props;
+  const { id, className, background, minSize, maxSize, speed, particleColor, particleDensity } =
+    props;
   const controls = useAnimation();
 
   const particlesLoaded = async (container?: Container) => {

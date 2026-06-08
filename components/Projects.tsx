@@ -50,9 +50,7 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="flex flex-col flex-2">
-                  <h1 className="font-bold lg:text-2xl md:text-xl text-lg line-clamp-1">
-                    {title}
-                  </h1>
+                  <h1 className="font-bold lg:text-2xl md:text-xl text-lg line-clamp-1">{title}</h1>
                   <p className="lg:text-xl font-normal text-sm line-clamp-2">
                     {t(`items.${id}.description`)}
                   </p>
@@ -66,11 +64,7 @@ const Projects = () => {
                           className="border border-border rounded-full bg-zinc-900
                         lg:w-10 lg:h-10 h-8 w-8 flex justify-center items-center"
                         >
-                          <img
-                            src={`/assets/${icon}`}
-                            alt={icon}
-                            className="p-1"
-                          />
+                          <img src={`/assets/${icon}`} alt={icon} className="p-1" />
                         </div>
                       );
                     })}

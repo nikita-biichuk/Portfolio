@@ -33,14 +33,8 @@ const Hero = () => {
            md:-top-20 h-screen"
           fill="white"
         />
-        <Spotlight
-          className="-top-1 left-full h-[80vh] w-[90vw]"
-          fill="purple"
-        />
-        <Spotlight
-          className="top-30 left-full h-screen w-[40vh] md:w-[60bw]"
-          fill="yellow"
-        />
+        <Spotlight className="-top-1 left-full h-[80vh] w-[90vw]" fill="purple" />
+        <Spotlight className="top-30 left-full h-screen w-[40vh] md:w-[60bw]" fill="yellow" />
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
       <div className="h-screen absolute top-0 left-0 w-full bg-background dark:bg-grid-white bg-grid-black flex items-center justify-center">

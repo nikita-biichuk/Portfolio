@@ -23,19 +23,14 @@ const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer
-      className="pb-24 md:pb-28 xl:pb-20 pt-24 md:pt-32 w-full relative"
-      id="contact"
-    >
+    <footer className="pb-24 md:pb-28 xl:pb-20 pt-24 md:pt-32 w-full relative" id="contact">
       <div className="h-screen w-full bg-background dark:bg-grid-white bg-grid-black flex items-center justify-center">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="flex flex-col lg:max-w-[45vw] relative z-10">
           <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">
             {t("titlePrefix")} <span className="text-gradient">{t("titleAccent")}</span>
           </h1>
-          <p className="text-muted-foreground md:mt-10 my-5 text-center">
-            {t("description")}
-          </p>
+          <p className="text-muted-foreground md:mt-10 my-5 text-center">{t("description")}</p>
           <ContactForm />
           <div className="flex mt-10 md:flex-row flex-col justify-between items-center gap-4 md:gap-2">
             <p className="font-normal text-sm">

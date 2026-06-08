@@ -18,9 +18,7 @@ export const PinContainer = ({
   containerClassName?: string;
 }) => {
   const [hovered, setHovered] = useState(false);
-  const [transform, setTransform] = useState(
-    "translate(-50%,-50%) rotateX(0deg)"
-  );
+  const [transform, setTransform] = useState("translate(-50%,-50%) rotateX(0deg)");
 
   const onMouseEnter = () => {
     setHovered(true);

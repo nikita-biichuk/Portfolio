@@ -54,17 +54,24 @@ export default function About() {
                 {t("About.cards.skills.teamworkValue")}
               </p>
               <p className="text-sm font-medium">
-                <span className="text-xl font-bold">{t("About.cards.skills.adaptabilityLabel")}</span>{" "}
+                <span className="text-xl font-bold">
+                  {t("About.cards.skills.adaptabilityLabel")}
+                </span>{" "}
                 {t("About.cards.skills.adaptabilityValue")}
               </p>
             </div>
           }
-          icon={<AceternityIcon title={t("About.cards.skills.badge")} accentClass="text-violet-400" />}
+          icon={
+            <AceternityIcon title={t("About.cards.skills.badge")} accentClass="text-violet-400" />
+          }
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-violet-950"
-            colors={[[139, 92, 246], [99, 102, 241]]}
+            colors={[
+              [139, 92, 246],
+              [99, 102, 241],
+            ]}
           />
         </Card>
 
@@ -104,12 +111,20 @@ export default function About() {
               ))}
             </div>
           }
-          icon={<AceternityIcon title={t("About.cards.education.badge")} accentClass="text-emerald-400" />}
+          icon={
+            <AceternityIcon
+              title={t("About.cards.education.badge")}
+              accentClass="text-emerald-400"
+            />
+          }
         >
           <CanvasRevealEffect
             animationSpeed={4}
             containerClassName="bg-emerald-950"
-            colors={[[16, 185, 129], [20, 184, 166]]}
+            colors={[
+              [16, 185, 129],
+              [20, 184, 166],
+            ]}
             dotSize={2}
           />
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-background/60" />
@@ -120,12 +135,17 @@ export default function About() {
           title={t("About.cards.personal.title")}
           hoverClass="hover:border-rose-500/50 hover:shadow-[0_0_40px_-10px_rgba(244,63,94,0.6)]"
           description={t("About.cards.personal.description", { age })}
-          icon={<AceternityIcon title={t("About.cards.personal.badge")} accentClass="text-rose-400" />}
+          icon={
+            <AceternityIcon title={t("About.cards.personal.badge")} accentClass="text-rose-400" />
+          }
         >
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-rose-950"
-            colors={[[244, 63, 94], [251, 146, 60]]}
+            colors={[
+              [244, 63, 94],
+              [251, 146, 60],
+            ]}
           />
         </Card>
       </div>
@@ -191,7 +211,9 @@ const Card = ({
 
 const AceternityIcon = ({ title, accentClass }: { title: string; accentClass?: string }) => {
   return (
-    <button className={`text-2xl px-6 inline-flex h-16 animate-shimmer items-center justify-center rounded-md border border-border bg-[linear-gradient(110deg,var(--color-card),45%,var(--color-accent),55%,var(--color-card))] bg-[length:200%_100%] font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background ${accentClass ?? "text-muted-foreground"}`}>
+    <button
+      className={`text-2xl px-6 inline-flex h-16 animate-shimmer items-center justify-center rounded-md border border-border bg-[linear-gradient(110deg,var(--color-card),45%,var(--color-accent),55%,var(--color-card))] bg-[length:200%_100%] font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background ${accentClass ?? "text-muted-foreground"}`}
+    >
       {title}
     </button>
   );

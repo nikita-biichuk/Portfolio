@@ -34,7 +34,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t("description"),
       url,
       siteName: t("siteName"),
-      images: [{ url: "https://nikita-biichuks-portfolio.vercel.app/assets/images/profile/avatar.jpg", width: 1200, height: 630, alt: t("openGraphAlt") }],
+      images: [
+        {
+          url: "https://nikita-biichuks-portfolio.vercel.app/assets/images/profile/avatar.jpg",
+          width: 1200,
+          height: 630,
+          alt: t("openGraphAlt"),
+        },
+      ],
       locale,
       type: "website",
     },
@@ -66,12 +73,8 @@ export default async function Home({ params }: Props) {
     name: "Nikita Biichuk",
     jobTitle: t("person.jobTitle"),
     url: `https://nikita-biichuks-portfolio.vercel.app/${locale}`,
-    image:
-      "https://nikita-biichuks-portfolio.vercel.app/assets/images/profile/avatar.jpg",
-    sameAs: [
-      "https://github.com/nikitabiichuk2009",
-      "https://twitter.com/nikitabiichuk",
-    ],
+    image: "https://nikita-biichuks-portfolio.vercel.app/assets/images/profile/avatar.jpg",
+    sameAs: ["https://github.com/nikitabiichuk2009", "https://twitter.com/nikitabiichuk"],
     address: {
       "@type": "PostalAddress",
       addressCountry: "UA",

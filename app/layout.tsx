@@ -8,7 +8,6 @@ import { CustomCursor } from "@/components/ui/CustomCursor";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 
-
 export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
   icons: {
@@ -46,12 +45,7 @@ export default async function RootLayout({
   return (
     <html lang={locale ?? routing.defaultLocale} suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <ScrollProgressBar />
           <Toaster />
           <CustomCursor />

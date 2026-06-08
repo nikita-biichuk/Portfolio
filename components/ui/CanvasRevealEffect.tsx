@@ -25,9 +25,7 @@ export const CanvasRevealEffect = ({
 }) => {
   return (
     <div className={cn("h-full relative bg-white w-full", containerClassName)}>
-      {showGradient && (
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 to-[84%]" />
-      )}
+      {showGradient && <div className="absolute inset-0 bg-gradient-to-t from-gray-950 to-[84%]" />}
     </div>
   );
 };
@@ -213,9 +211,7 @@ const ShaderMaterial = ({
           break;
         case "uniform3fv":
           preparedUniforms[uniformName] = {
-            value: uniform.value.map((v: number[]) =>
-              new THREE.Vector3().fromArray(v)
-            ),
+            value: uniform.value.map((v: number[]) => new THREE.Vector3().fromArray(v)),
             type: "3fv",
           };
           break;

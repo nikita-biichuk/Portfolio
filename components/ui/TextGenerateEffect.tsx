@@ -34,11 +34,7 @@ export const TextGenerateEffect = ({
           return (
             <m.span
               key={word + idx}
-              className={`${
-                idx > numberForColor
-                  ? "text-primary"
-                  : "text-foreground"
-              } opacity-0`}
+              className={`${idx > numberForColor ? "text-primary" : "text-foreground"} opacity-0`}
             >
               {word}{" "}
             </m.span>
@@ -51,9 +47,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
-        <div className="text-foreground leading-snug tracking-wide">
-          {renderWords()}
-        </div>
+        <div className="text-foreground leading-snug tracking-wide">{renderWords()}</div>
       </div>
     </div>
   );

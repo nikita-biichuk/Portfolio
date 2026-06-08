@@ -5,9 +5,11 @@
 ## assets/
 
 ### documents/
+
 - **`documents/NikitaBiichukResume.pdf`** – CV / resume
 
 ### images/
+
 - **`images/profile/`** – Profile photo (avatar.jpg)
 - **`images/courses/`** – Course preview images (python-course-with-angela.png, etc.)
 - **`images/projects/`** – Project screenshots (stack.png, carepulse.png, etc.)
@@ -16,6 +18,7 @@
 - **`images/misc/`** – Grid, footer-grid, confetti, fm, gsap, three, tiktok, link, wha
 
 ### icons/
+
 - **`icons/tech/`** – Tech stack icons (next, react, tailwind, ts, mongo, etc.)
 - **`icons/social/`** – Social links (git, insta, twit)
 - **`icons/companies/`** – Company logos (cloud, app, stream, docker, etc.)

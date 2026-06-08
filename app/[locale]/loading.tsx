@@ -7,9 +7,7 @@ export default function Loading() {
 
   return (
     <div className="w-full h-screen flex flex-col gap-3 items-center justify-center">
-      <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">
-        {t("title")}
-      </h1>
+      <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">{t("title")}</h1>
       <p className="text-muted-foreground text-base">{t("description")}</p>
       <svg
         aria-hidden="true"

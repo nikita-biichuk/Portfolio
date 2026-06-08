@@ -1,12 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  AnimatePresence,
-  m,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+import { AnimatePresence, m, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -108,20 +103,12 @@ export const FloatingNav = ({
             aria-label="Back to top"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-card/70 transition-colors duration-200 hover:bg-accent"
           >
-            <Image
-              src="/favicon/favicon.svg"
-              alt="Site logo"
-              width={22}
-              height={22}
-              priority
-            />
+            <Image src="/favicon/favicon.svg" alt="Site logo" width={22} height={22} priority />
           </Link>
 
           {navItems.map((navItem, idx) => {
             const isActive =
-              navItem.link === "#"
-                ? activeSection === ""
-                : "#" + activeSection === navItem.link;
+              navItem.link === "#" ? activeSection === "" : "#" + activeSection === navItem.link;
             return (
               <div key={navItem.name}>
                 <Link
