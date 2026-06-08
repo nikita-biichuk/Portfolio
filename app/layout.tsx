@@ -1,83 +1,50 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { routing } from "@/i18n/routing";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { Toaster } from "@/components/ui/sonner";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
+import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const description = "Nikita Biichuk - Full Stack Web Developer from Ukraine. Specialized in React, Next.js, TypeScript, Node.js, MongoDB, and modern web technologies. View my portfolio, projects, and experience."
-const siteUrl = "https://nikita-biichuks-portfolio.vercel.app"
 
 export const metadata: Metadata = {
-  title: {
-    default: "Nikita Biichuk - Full Stack Web Developer Portfolio",
-    template: "%s | Nikita Biichuk"
-  },
-  description,
-  keywords: [
-    "Nikita Biichuk",
-    "Nikita Biichuk Portfolio",
-  ],
-  authors: [{ name: "Nikita Biichuk" }],
-  creator: "Nikita Biichuk",
-  publisher: "Nikita Biichuk",
-  metadataBase: new URL(siteUrl),
-  alternates: {
-    canonical: "/",
-  },
+  manifest: "/favicon/site.webmanifest",
   icons: {
-    icon: "/assets/images/profile/avatar.jpg",
-    apple: "/assets/images/profile/avatar.jpg",
-  },
-  openGraph: {
-    title: "Nikita Biichuk - Full Stack Web Developer Portfolio",
-    description,
-    url: siteUrl,
-    siteName: "Nikita Biichuk's Portfolio",
-    images: [
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
       {
-        url: "/assets/images/profile/avatar.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Nikita Biichuk - Full Stack Web Developer",
+        url: "/favicon/favicon-96x96.png",
+        sizes: "96x96",
+        type: "image/png",
       },
     ],
-    type: "website",
-    locale: "en_US",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@nikitabiichuk",
-    creator: "@nikitabiichuk",
-    title: "Nikita Biichuk - Full Stack Web Developer",
-    description,
-    images: ["/assets/images/profile/avatar.jpg"],
-  },
-  verification: {
-    // Add Google Search Console verification when available
-    // google: "your-google-verification-code",
+    shortcut: "/favicon/favicon.ico",
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 };
 
-export default function RootLayout({
+const inter = Inter({ subsets: ["latin"] });
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale?: string }>;
 }>) {
+  const { locale } = await params;
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale ?? routing.defaultLocale} suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -85,7 +52,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ScrollProgressBar />
           <Toaster />
+          <CustomCursor />
+          <GrainOverlay />
           {children}
         </ThemeProvider>
       </body>

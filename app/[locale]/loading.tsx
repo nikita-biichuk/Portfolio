@@ -1,12 +1,16 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function Loading() {
+  const t = useTranslations("Loading");
+
   return (
     <div className="w-full h-screen flex flex-col gap-3 items-center justify-center">
       <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">
-        Loading...
+        {t("title")}
       </h1>
-      <p className="text-muted-foreground text-base">Please wait while the page is loading</p>
+      <p className="text-muted-foreground text-base">{t("description")}</p>
       <svg
         aria-hidden="true"
         className="size-12 text-muted animate-spin fill-primary"

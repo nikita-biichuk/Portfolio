@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useId, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { SparklesCore } from "./sparkles";
@@ -38,11 +38,11 @@ export const Cover = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       ref={ref}
-      className="relative hover:bg-neutral-900  group/cover inline-block dark:bg-neutral-900 bg-neutral-100 px-2 py-2  transition duration-200 rounded-sm"
+      className="relative group/cover inline-block bg-neutral-100 dark:bg-neutral-900 hover:bg-primary dark:hover:bg-neutral-900 px-2 py-2 transition duration-200 rounded-sm"
     >
       <AnimatePresence>
         {hovered && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -53,7 +53,7 @@ export const Cover = ({
             }}
             className="h-full w-full overflow-hidden absolute inset-0"
           >
-            <motion.div
+            <m.div
               animate={{
                 translateX: ["-50%", "0%"],
               }}
@@ -70,7 +70,7 @@ export const Cover = ({
                 background="transparent"
                 minSize={0.4}
                 maxSize={1}
-                particleDensity={500}
+                particleDensity={180}
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />
@@ -78,12 +78,12 @@ export const Cover = ({
                 background="transparent"
                 minSize={0.4}
                 maxSize={1}
-                particleDensity={500}
+                particleDensity={180}
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
       {beamPositions.map((position, index) => (
@@ -98,7 +98,7 @@ export const Cover = ({
           }}
         />
       ))}
-      <motion.span
+      <m.span
         key={String(hovered)}
         animate={{
           scale: hovered ? 0.8 : 1,
@@ -136,7 +136,7 @@ export const Cover = ({
         )}
       >
         {children}
-      </motion.span>
+      </m.span>
     </div>
   );
 };
@@ -154,11 +154,11 @@ export const Beam = ({
   duration?: number;
   hovered?: boolean;
   width?: number;
-} & React.ComponentProps<typeof motion.svg>) => {
+} & React.ComponentProps<typeof m.svg>) => {
   const id = useId();
 
   return (
-    <motion.svg
+    <m.svg
       width={width ?? "600"}
       height="1"
       viewBox={`0 0 ${width ?? "600"} 1`}
@@ -167,13 +167,13 @@ export const Beam = ({
       className={cn("absolute inset-x-0 w-full", className)}
       {...svgProps}
     >
-      <motion.path
+      <m.path
         d={`M0 0.5H${width ?? "600"}`}
         stroke={`url(#svgGradient-${id})`}
       />
 
       <defs>
-        <motion.linearGradient
+        <m.linearGradient
           id={`svgGradient-${id}`}
           key={String(hovered)}
           gradientUnits="userSpaceOnUse"
@@ -200,8 +200,8 @@ export const Beam = ({
           <stop stopColor="#2EB9DF" stopOpacity="0" />
           <stop stopColor="#3b82f6" />
           <stop offset="1" stopColor="#3b82f6" stopOpacity="0" />
-        </motion.linearGradient>
+        </m.linearGradient>
       </defs>
-    </motion.svg>
+    </m.svg>
   );
 };

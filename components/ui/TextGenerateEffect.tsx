@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
+import { m, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 export const TextGenerateEffect = ({
@@ -29,29 +29,29 @@ export const TextGenerateEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <m.div ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
-            <motion.span
+            <m.span
               key={word + idx}
               className={`${
                 idx > numberForColor
-                  ? "text-purple"
-                  : "dark:text-white text-black"
+                  ? "text-primary"
+                  : "text-foreground"
               } opacity-0`}
             >
               {word}{" "}
-            </motion.span>
+            </m.span>
           );
         })}
-      </motion.div>
+      </m.div>
     );
   };
 
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
-        <div className="${}dark:text-white text-white leading-snug tracking-wide">
+        <div className="text-foreground leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>

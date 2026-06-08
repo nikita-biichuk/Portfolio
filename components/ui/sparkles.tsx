@@ -4,7 +4,7 @@ import Particles, { ParticlesProvider, useParticlesProvider } from "@tsparticles
 import type { Container } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/lib/utils";
-import { motion, useAnimation } from "framer-motion";
+import { m, useAnimation } from "framer-motion";
 
 const initEngine = async (engine: Parameters<typeof loadSlim>[0]) => {
   await loadSlim(engine);
@@ -49,7 +49,7 @@ const SparklesCoreInner = (props: ParticlesProps) => {
 
   const generatedId = useId();
   return (
-    <motion.div animate={controls} className={cn("opacity-0", className)}>
+    <m.div animate={controls} className={cn("opacity-0", className)}>
       {loaded && (
         <Particles
           id={id || generatedId}
@@ -107,7 +107,7 @@ const SparklesCoreInner = (props: ParticlesProps) => {
           }}
         />
       )}
-    </motion.div>
+    </m.div>
   );
 };
 

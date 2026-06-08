@@ -1,44 +1,59 @@
-import React from "react";
-import { ContactForm } from "./ContactForm";
-import { socialMedia } from "@/data";
+"use client";
+
+import type { ComponentType } from "react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { socialMedia } from "@/data";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(
+  () => import("./ContactForm").then((mod) => ({ default: mod.ContactForm })),
+  { ssr: false, loading: () => <div className="h-[420px]" /> }
+);
+
+const iconMap: Record<string, ComponentType<{ className?: string }>> = {
+  github: FaGithub,
+  instagram: FaInstagram,
+  twitter: FaXTwitter,
+  linkedin: FaLinkedin,
+};
 
 const Footer = () => {
+  const t = useTranslations("Footer");
+
   return (
     <footer
-      className="pb-32 md:pb-28 xl:pb-20 pt-36 w-full relative"
+      className="pb-24 md:pb-28 xl:pb-20 pt-24 md:pt-32 w-full relative"
       id="contact"
     >
-      <div className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white bg-grid-black flex items-center justify-center">
-        {/* Radial gradient for the container to give a faded look */}
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="h-screen w-full bg-background dark:bg-grid-white bg-grid-black flex items-center justify-center">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="flex flex-col lg:max-w-[45vw] relative z-10">
-          <h1 className="text-3xl md:text-5xl text-center text-white font-bold">
-            So Let&apos;s Work <span className="text-purple">Together!</span>
+          <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">
+            {t("titlePrefix")} <span className="text-gradient">{t("titleAccent")}</span>
           </h1>
-          <p className="text-white-200 md:mt-10 my-5 text-center">
-            Reach out to me today and let&apos;s discuss how I can help you!
+          <p className="text-muted-foreground md:mt-10 my-5 text-center">
+            {t("description")}
           </p>
           <ContactForm />
           <div className="flex mt-10 md:flex-row flex-col justify-between items-center gap-4 md:gap-2">
             <p className="font-normal text-sm">
-              Copyright © {new Date().getFullYear()} Nikita Biichuk
+              {t("copyright", { year: new Date().getFullYear() })}
             </p>
             <div className="flex items-center gap-3 lg:gap-6">
-              {socialMedia.map((link) => {
+              {socialMedia.map((item) => {
+                const Icon = iconMap[item.icon];
+
                 return (
-                  <div
-                    key={link.id}
-                    className="h-10 w-10 cursor-pointer flex justify-center items-center backdrop:filter backdrop-blur-lg saturate-180 opacity-75 transition-colors duration-200 ease-in-out rounded-lg border-black-300 bg-black-200 hover:bg-black-300"
+                  <Link
+                    key={item.id}
+                    href={item.link}
+                    aria-label={t(`socialAlt.${item.id}`)}
+                    className="h-10 w-10 flex justify-center items-center rounded-lg border border-border bg-card hover:bg-accent text-foreground opacity-75 hover:opacity-100 transition-all duration-200 ease-in-out"
                   >
-                    <Link href={link.link}>
-                      <img
-                        src={link.img}
-                        className="w-20 h-20"
-                        alt="social media icon"
-                      />
-                    </Link>
-                  </div>
+                    {Icon && <Icon className="h-5 w-5" />}
+                  </Link>
                 );
               })}
             </div>

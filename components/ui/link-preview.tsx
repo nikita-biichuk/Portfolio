@@ -5,7 +5,7 @@ import { encode } from "qss";
 import React from "react";
 import {
   AnimatePresence,
-  motion,
+  m,
   useMotionValue,
   useSpring,
 } from "framer-motion";
@@ -80,6 +80,7 @@ export const LinkPreview = ({
             height={height}
             priority={true}
             alt="hidden image"
+            style={{ width, height: "auto" }}
           />
         </div>
       ) : null}
@@ -93,7 +94,7 @@ export const LinkPreview = ({
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-white", className)}
+          className={cn("text-foreground", className)}
           href={url}
         >
           {children}
@@ -107,7 +108,7 @@ export const LinkPreview = ({
         >
           <AnimatePresence>
             {isOpen && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
                 animate={{
                   opacity: 1,
@@ -127,7 +128,7 @@ export const LinkPreview = ({
               >
                 <Link
                   href={url}
-                  className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+                  className="block p-1 bg-background border-2 border-transparent shadow rounded-xl hover:border-border"
                   style={{ fontSize: 0 }}
                   passHref
                 >
@@ -138,9 +139,10 @@ export const LinkPreview = ({
                     priority={true}
                     className="rounded-lg"
                     alt="preview image"
+                    style={{ width, height: "auto" }}
                   />
                 </Link>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </HoverCardPrimitive.Content>

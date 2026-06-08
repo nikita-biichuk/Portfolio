@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import {
-  motion,
+  m,
   useAnimationFrame,
   useMotionTemplate,
   useMotionValue,
@@ -47,7 +47,7 @@ export function Button({
         <MovingBorder duration={duration} rx="30%" ry="30%">
           <div
             className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]",
+              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--color-primary)_40%,transparent_60%)]",
               borderClassName
             )}
           />
@@ -56,7 +56,7 @@ export function Button({
 
       <div
         className={cn(
-          "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
+          "relative bg-card/80 border border-border backdrop-blur-xl text-foreground flex items-center justify-center w-full h-full text-sm antialiased",
           className
         )}
         style={{
@@ -123,7 +123,7 @@ export const MovingBorder = ({
           ref={pathRef}
         />
       </svg>
-      <motion.div
+      <m.div
         style={{
           position: "absolute",
           top: 0,
@@ -133,7 +133,7 @@ export const MovingBorder = ({
         }}
       >
         {children}
-      </motion.div>
+      </m.div>
     </>
   );
 };

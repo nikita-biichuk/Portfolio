@@ -1,0 +1,163 @@
+{
+  "Metadata": {
+    "title": "Nikita Biichuk - Full Stack Developer Portfolio",
+    "description": "Nikita Biichuk is a full stack developer from Ukraine specializing in React, Next.js, TypeScript, Node.js, MongoDB, and modern product development. Explore projects, experience, and contact details.",
+    "personName": "Nikita Biichuk",
+    "portfolioKeyword": "Nikita Biichuk Portfolio",
+    "siteName": "Nikita Biichuk's Portfolio",
+    "openGraphAlt": "Nikita Biichuk - Full Stack Developer",
+    "twitterTitle": "Nikita Biichuk - Full Stack Developer"
+  },
+  "HomePage": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "person": {
+      "jobTitle": "Full Stack Developer",
+      "description": "Full stack developer from Ukraine specializing in React, Next.js, TypeScript, Node.js, and modern product development."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": {
+      "en": "EN",
+      "uk": "UA"
+    },
+    "switchTo": {
+      "en": "Switch language to English",
+      "uk": "Switch language to Ukrainian"
+    }
+  },
+  "Loading": {
+    "title": "Loading...",
+    "description": "Please wait while the page is loading"
+  },
+  "Hero": {
+    "rolePrefix": "Full Stack",
+    "roleAccent": "Developer",
+    "title": "<accent>Nikita Biichuk's</accent> Portfolio",
+    "description": "Hi! I'm Nikita, a full stack developer based in Ukraine. I specialize in React, Next.js, TypeScript, Node.js, and modern product development.",
+    "seeWork": "See my work",
+    "viewCv": "View CV"
+  },
+  "About": {
+    "titlePrefix": "About",
+    "titleAccent": "me",
+    "cards": {
+      "skills": {
+        "title": "My skills",
+        "badge": "My skills",
+        "techStackLabel": "Tech stack:",
+        "techStackValue": "HTML, CSS, JavaScript, TailwindCSS, ShadCn, ChakraUI, TypeScript, React.js, React Native, Appwrite, Node.js, Phaser, Express.js, MongoDB, PostgreSQL, Prisma, APIs, Next.js, YAML, unit tests, Python, Flask, C#, Unity 2D.",
+        "teamworkLabel": "Teamwork:",
+        "teamworkValue": "Experience working in collaborative environments and communicating effectively with teammates.",
+        "adaptabilityLabel": "Adaptability:",
+        "adaptabilityValue": "Quick to learn new technologies and adapt to changing project requirements."
+      },
+      "education": {
+        "title": "My education",
+        "badge": "Education",
+        "currentEducationLabel": "Education:",
+        "currentEducationValue": "Just graduated from school! Focusing full-time on web development.",
+        "completedCoursesLabel": "Completed courses:"
+      },
+      "personal": {
+        "title": "Something personal about me",
+        "badge": "Personal info",
+        "description": "Hi, I'm Nikita, a {age}-year-old developer. I just graduated from school and am fully focused on building great software. I have been wrestling for 8 years, which has taught me discipline and perseverance. My hobbies include mountain biking, reading, and gaming. I'm known for being responsible, kind, and dedicated, always striving to give my best in everything I do."
+      }
+    }
+  },
+  "Courses": {
+    "pythonBootcamp": "100 Days of Code: The Complete Python Pro Bootcamp for 2023",
+    "webDevBootcamp": "The Complete 2023 Web Development Bootcamp",
+    "reactGuide": "React - The Complete Guide (incl Hooks, React Router, Redux)",
+    "nextCourse": "The Ultimate Next.js Course",
+    "unityCourse": "Unity Platformer Course"
+  },
+  "WorkExperience": {
+    "titlePrefix": "My",
+    "titleAccent": "Work Experience",
+    "items": {
+      "techForgeStudio": {
+        "title": "Full Stack Developer",
+        "description": "May 2024 - December 2025. Worked on 6 large and varied projects."
+      },
+      "arcticWeb": {
+        "title": "Full Stack Developer",
+        "description": "November 2025 - Present."
+      }
+    }
+  },
+  "Projects": {
+    "titlePrefix": "A small selection of",
+    "titleAccent": "Top Projects",
+    "viewOn": "View on",
+    "github": "GitHub",
+    "items": {
+      "stackOverflowClone": {
+        "title": "Modern StackOverflow clone",
+        "description": "This project includes user authentication, question and answer functionality, and a rich text editor for creating and editing posts."
+      },
+      "carePulse": {
+        "title": "CarePulse",
+        "description": "A healthcare platform that streamlines patient registration, appointment scheduling, and medical records."
+      },
+      "evently": {
+        "title": "Evently - Your Ultimate Event Management Platform",
+        "description": "Evently helps organizers create, manage, and promote events while giving attendees a smoother event experience."
+      },
+      "threadsClone": {
+        "title": "Threads clone",
+        "description": "A social platform clone with authentication, profiles, posting, comments, and community interactions."
+      },
+      "zoomClone": {
+        "title": "Zoom Clone",
+        "description": "A video conferencing experience built to make it easier to connect with colleagues and friends."
+      },
+      "flightFinder": {
+        "title": "Flight Finding Website",
+        "description": "A web app designed to help users find flights more easily and with less friction."
+      },
+      "hoobank": {
+        "title": "Modern Hoobank Website",
+        "description": "A modern banking landing page focused on card benefits, rewards, and financial storytelling."
+      },
+      "movieApp": {
+        "title": "Movie App",
+        "description": "A React Native and Expo Router app focused on movie discovery, recommendations, authentication, and social interaction."
+      }
+    }
+  },
+  "Footer": {
+    "titlePrefix": "So Let's Work",
+    "titleAccent": "Together!",
+    "description": "Reach out today and let's discuss how I can help you.",
+    "copyright": "Copyright © {year} Nikita Biichuk",
+    "socialAlt": {
+      "github": "GitHub profile",
+      "instagram": "Instagram profile",
+      "x": "X profile",
+      "linkedin": "LinkedIn profile"
+    }
+  },
+  "ContactForm": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "message": "Message",
+    "firstNamePlaceholder": "Tyler",
+    "lastNamePlaceholder": "Durden",
+    "emailPlaceholder": "examplemail@gmail.com",
+    "messagePlaceholder": "Your message",
+    "searchCountry": "Search country...",
+    "countryNotFound": "No country found.",
+    "submit": "Contact me →",
+    "submitting": "Sending...",
+    "success": "Successfully sent your message. I will contact you soon!",
+    "error": "Failed to send your message. Please try again later."
+  }
+}

@@ -2,7 +2,7 @@ import { CheckIcon, ChevronsUpDown } from "lucide-react";
 import * as React from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
-import { Button } from "./button";
+import { cn } from "@/lib/utils";
 import {
   Command,
   CommandEmpty,
@@ -11,13 +11,13 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { Input, InputProps } from "./Input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import { Button } from "./button";
+import { Input, InputProps } from "./Input";
 import { ScrollArea } from "./scroll-area";
 
 type PhoneInputProps = Omit<
@@ -25,18 +25,26 @@ type PhoneInputProps = Omit<
   "onChange" | "value"
 > &
   Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> & {
+    emptyMessage?: string;
     onChange?: (value: RPNInput.Value) => void;
+    searchPlaceholder?: string;
   };
 
 const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
   React.forwardRef<React.ElementRef<typeof RPNInput.default>, PhoneInputProps>(
-    ({ className, onChange, ...props }, ref) => {
+    ({ className, emptyMessage, onChange, searchPlaceholder, ...props }, ref) => {
       return (
         <RPNInput.default
           ref={ref}
           className={cn("flex", className)}
           flagComponent={FlagComponent}
-          countrySelectComponent={CountrySelect}
+          countrySelectComponent={(countrySelectProps) => (
+            <CountrySelect
+              {...countrySelectProps}
+              emptyMessage={emptyMessage}
+              searchPlaceholder={searchPlaceholder}
+            />
+          )}
           inputComponent={InputComponent}
           // @ts-ignore
           onChange={(value) => onChange?.(value || "")}
@@ -62,16 +70,20 @@ type CountrySelectOption = { label: string; value: RPNInput.Country };
 
 type CountrySelectProps = {
   disabled?: boolean;
+  emptyMessage?: string;
   value: RPNInput.Country;
   onChange: (value: RPNInput.Country) => void;
   options: CountrySelectOption[];
+  searchPlaceholder?: string;
 };
 
 const CountrySelect = ({
   disabled,
+  emptyMessage,
   value,
   onChange,
   options,
+  searchPlaceholder,
 }: CountrySelectProps) => {
   const handleSelect = React.useCallback(
     (country: RPNInput.Country) => {
@@ -102,8 +114,8 @@ const CountrySelect = ({
         <Command>
           <CommandList>
             <ScrollArea className="h-72">
-              <CommandInput placeholder="Search country..." />
-              <CommandEmpty>No country found.</CommandEmpty>
+              <CommandInput placeholder={searchPlaceholder} />
+              <CommandEmpty>{emptyMessage}</CommandEmpty>
               <CommandGroup>
                 {options
                   .filter((x) => x.value)
