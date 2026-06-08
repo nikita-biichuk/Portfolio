@@ -3,13 +3,11 @@
 export default function Loading() {
   return (
     <div className="w-full h-screen flex flex-col gap-3 items-center justify-center">
-      <h1 className="text-3xl md:text-5xl text-center text-white font-bold">
-        Loading...
-      </h1>
-      <p className="text-slate-300 text-base">Please wait while the page is loading</p>
+      <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">Loading...</h1>
+      <p className="text-muted-foreground text-base">Please wait while the page is loading</p>
       <svg
         aria-hidden="true"
-        className="size-12 text-gray-600 animate-spin dark:text-gray-600 fill-purple"
+        className="size-12 text-muted animate-spin fill-primary"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

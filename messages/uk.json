@@ -1,0 +1,163 @@
+{
+  "Metadata": {
+    "title": "Портфоліо Нікіти Бійчука",
+    "description": "Нікіта Бійчук — full-stack розробник з України. Працюю з React, Next.js, TypeScript, Node.js, MongoDB та сучасною продуктовою розробкою. Тут зібрані мої проєкти, досвід і контакти.",
+    "personName": "Нікіта Бійчук",
+    "portfolioKeyword": "Портфоліо Нікіти Бійчука",
+    "siteName": "Портфоліо Нікіти Бійчука",
+    "openGraphAlt": "Нікіта Бійчук - full-stack розробник",
+    "twitterTitle": "Нікіта Бійчук - full-stack розробник"
+  },
+  "HomePage": {
+    "nav": {
+      "home": "Головна",
+      "about": "Про мене",
+      "projects": "Проєкти",
+      "contact": "Контакти"
+    },
+    "person": {
+      "jobTitle": "Full Stack Developer",
+      "description": "Full-stack розробник з України, який працює з React, Next.js, TypeScript, Node.js та сучасною продуктовою розробкою."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": {
+      "en": "EN",
+      "uk": "UA"
+    },
+    "switchTo": {
+      "en": "Перемкнути мову на англійську",
+      "uk": "Перемкнути мову на українську"
+    }
+  },
+  "Loading": {
+    "title": "Завантаження...",
+    "description": "Зачекайте, будь ласка, поки сторінка завантажується"
+  },
+  "Hero": {
+    "rolePrefix": "Full Stack",
+    "roleAccent": "Developer",
+    "title": "Портфоліо <accent>Нікіти Бійчука</accent>",
+    "description": "Привіт! Я Нікіта, full-stack розробник з України. Працюю з React, Next.js, TypeScript, Node.js та сучасною продуктовою розробкою.",
+    "seeWork": "Переглянути роботи",
+    "viewCv": "Відкрити CV"
+  },
+  "About": {
+    "titlePrefix": "Про",
+    "titleAccent": "мене",
+    "cards": {
+      "skills": {
+        "title": "Мої навички",
+        "badge": "Мої навички",
+        "techStackLabel": "Техстек:",
+        "techStackValue": "HTML, CSS, JavaScript, TailwindCSS, ShadCn, ChakraUI, TypeScript, React.js, React Native, Appwrite, Node.js, Phaser, Express.js, MongoDB, PostgreSQL, Prisma, API, Next.js, YAML, unit-тести, Python, Flask, C#, Unity 2D.",
+        "teamworkLabel": "Командна робота:",
+        "teamworkValue": "Маю досвід роботи в командному середовищі та ефективної комунікації з колегами.",
+        "adaptabilityLabel": "Адаптивність:",
+        "adaptabilityValue": "Швидко вивчаю нові технології та легко адаптуюся до змін у вимогах проєкту."
+      },
+      "education": {
+        "title": "Моя освіта",
+        "badge": "Освіта",
+        "currentEducationLabel": "Освіта:",
+        "currentEducationValue": "Щойно закінчив школу! Повністю зосереджений на розробці веб-додатків.",
+        "completedCoursesLabel": "Завершені курси:"
+      },
+      "personal": {
+        "title": "Трохи особистого про мене",
+        "badge": "Особиста інформація",
+        "description": "Привіт, я Нікіта, мені {age} років, і я full-stack розробник. Щойно закінчив школу і повністю зосереджений на створенні класного програмного забезпечення. Уже 8 років займаюся боротьбою, і саме вона навчила мене дисципліни та наполегливості. Люблю гірський велосипед, читання та ігри. Мене знають як відповідальну, добру й цілеспрямовану людину, яка завжди намагається викладатися на максимум."
+      }
+    }
+  },
+  "Courses": {
+    "pythonBootcamp": "100 Days of Code: повний Python Pro Bootcamp 2023",
+    "webDevBootcamp": "Повний Bootcamp з веброзробки 2023",
+    "reactGuide": "React - Повний курс (включно з Hooks, React Router, Redux)",
+    "nextCourse": "The Ultimate Next.js Course",
+    "unityCourse": "Курс зі створення платформера в Unity"
+  },
+  "WorkExperience": {
+    "titlePrefix": "Мій",
+    "titleAccent": "досвід роботи",
+    "items": {
+      "techForgeStudio": {
+        "title": "Full Stack Developer",
+        "description": "Травень 2024 - грудень 2025. Працював над 6 великими та різноплановими проєктами."
+      },
+      "arcticWeb": {
+        "title": "Full Stack Developer",
+        "description": "Листопад 2025 - дотепер."
+      }
+    }
+  },
+  "Projects": {
+    "titlePrefix": "Невелика добірка",
+    "titleAccent": "найкращих проєктів",
+    "viewOn": "Переглянути на",
+    "github": "GitHub",
+    "items": {
+      "stackOverflowClone": {
+        "title": "Сучасний клон StackOverflow",
+        "description": "Цей проєкт містить автентифікацію користувачів, функціональність питань і відповідей, а також rich text редактор для створення та редагування постів."
+      },
+      "carePulse": {
+        "title": "CarePulse",
+        "description": "Платформа для медицини, яка спрощує реєстрацію пацієнтів, запис на прийоми та роботу з медичними записами."
+      },
+      "evently": {
+        "title": "Evently - платформа для керування подіями",
+        "description": "Evently допомагає організаторам створювати, керувати та просувати події, а відвідувачам дарує зручніший досвід."
+      },
+      "threadsClone": {
+        "title": "Клон Threads",
+        "description": "Клон соціальної платформи з автентифікацією, профілями, постами, коментарями та взаємодією в спільнотах."
+      },
+      "zoomClone": {
+        "title": "Клон Zoom",
+        "description": "Досвід відеоконференцій, створений для простішого спілкування з колегами та друзями."
+      },
+      "flightFinder": {
+        "title": "Сайт для пошуку авіаквитків",
+        "description": "Вебдодаток, створений для того, щоб користувачам було простіше та швидше знаходити авіарейси."
+      },
+      "hoobank": {
+        "title": "Сучасний сайт Hoobank",
+        "description": "Сучасний лендинг для банківського продукту з акцентом на переваги карток, винагороди та фінансовий сторітелінг."
+      },
+      "movieApp": {
+        "title": "Movie App",
+        "description": "Застосунок на React Native та Expo Router для пошуку фільмів, рекомендацій, автентифікації та соціальної взаємодії."
+      }
+    }
+  },
+  "Footer": {
+    "titlePrefix": "Давайте",
+    "titleAccent": "працювати разом!",
+    "description": "Напишіть мені сьогодні, і ми обговоримо, як я можу вам допомогти.",
+    "copyright": "Авторське право © {year} Нікіта Бійчук",
+    "socialAlt": {
+      "github": "Профіль GitHub",
+      "instagram": "Профіль Instagram",
+      "x": "Профіль X",
+      "linkedin": "Профіль LinkedIn"
+    }
+  },
+  "ContactForm": {
+    "firstName": "Ім'я",
+    "lastName": "Прізвище",
+    "email": "Електронна пошта",
+    "phone": "Номер телефону",
+    "message": "Повідомлення",
+    "firstNamePlaceholder": "Тайлер",
+    "lastNamePlaceholder": "Дерден",
+    "emailPlaceholder": "examplemail@gmail.com",
+    "messagePlaceholder": "Ваше повідомлення",
+    "searchCountry": "Пошук країни...",
+    "countryNotFound": "Країну не знайдено.",
+    "submit": "Зв'язатися зі мною →",
+    "submitting": "Надсилання...",
+    "success": "Ваше повідомлення успішно надіслано. Я зв'яжуся з вами найближчим часом!",
+    "error": "Не вдалося надіслати повідомлення. Спробуйте ще раз пізніше."
+  }
+}

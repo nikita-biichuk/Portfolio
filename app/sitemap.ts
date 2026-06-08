@@ -1,33 +1,17 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+
+import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://nikita-biichuks-portfolio.vercel.app'
+  const baseUrl = "https://nikita-biichuks-portfolio.vercel.app";
+  const anchors = ["", "#about", "#projects", "#contact"];
 
-  return [
-    {
-      url: baseUrl,
+  return routing.locales.flatMap((locale) =>
+    anchors.map((anchor) => ({
+      url: `${baseUrl}/${locale}${anchor}`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/#about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-  ]
+      changeFrequency: anchor === "#projects" ? "weekly" : "monthly",
+      priority: anchor === "" ? 1 : anchor === "#projects" ? 0.9 : 0.8,
+    }))
+  );
 }
-

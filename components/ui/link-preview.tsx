@@ -3,13 +3,9 @@ import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import { encode } from "qss";
 import React from "react";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { AnimatePresence, m, useMotionValue, useSpring } from "framer-motion";
 import Link from "next/link";
+
 import { cn } from "@/lib/utils";
 
 type LinkPreviewProps = {
@@ -18,12 +14,7 @@ type LinkPreviewProps = {
   className?: string;
   width?: number;
   height?: number;
-  quality?: number;
-  layout?: string;
-} & (
-  | { isStatic: true; imageSrc: string }
-  | { isStatic?: false; imageSrc?: never }
-);
+} & ({ isStatic: true; imageSrc: string } | { isStatic?: false; imageSrc?: never });
 
 export const LinkPreview = ({
   children,
@@ -31,8 +22,6 @@ export const LinkPreview = ({
   className,
   width = 200,
   height = 125,
-  quality = 50,
-  layout = "fixed",
   isStatic = false,
   imageSrc = "",
 }: LinkPreviewProps) => {
@@ -59,6 +48,7 @@ export const LinkPreview = ({
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
   }, []);
 
@@ -67,8 +57,8 @@ export const LinkPreview = ({
 
   const translateX = useSpring(x, springConfig);
 
-  const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect();
+  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+    const targetRect = (event.target as HTMLElement).getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
     const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
     x.set(offsetFromCenter);
@@ -82,10 +72,9 @@ export const LinkPreview = ({
             src={src}
             width={width}
             height={height}
-            quality={quality}
-            layout={layout}
             priority={true}
             alt="hidden image"
+            style={{ width, height: "auto" }}
           />
         </div>
       ) : null}
@@ -99,7 +88,7 @@ export const LinkPreview = ({
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-white", className)}
+          className={cn("text-foreground", className)}
           href={url}
         >
           {children}
@@ -113,7 +102,7 @@ export const LinkPreview = ({
         >
           <AnimatePresence>
             {isOpen && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
                 animate={{
                   opacity: 1,
@@ -133,7 +122,7 @@ export const LinkPreview = ({
               >
                 <Link
                   href={url}
-                  className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+                  className="block p-1 bg-background border-2 border-transparent shadow rounded-xl hover:border-border"
                   style={{ fontSize: 0 }}
                   passHref
                 >
@@ -141,14 +130,13 @@ export const LinkPreview = ({
                     src={isStatic ? imageSrc : src}
                     width={width}
                     height={height}
-                    quality={quality}
-                    layout={layout}
                     priority={true}
                     className="rounded-lg"
                     alt="preview image"
+                    style={{ width, height: "auto" }}
                   />
                 </Link>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </HoverCardPrimitive.Content>

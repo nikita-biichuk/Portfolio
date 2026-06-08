@@ -1,10 +1,18 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.microlink.io",
+      },
     ],
+    qualities: [50, 75, 90],
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
