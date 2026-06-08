@@ -73,7 +73,7 @@ export default function About() {
                 <span className="text-xl font-bold">Completed courses:</span>
               </p>
               {courses.map((course) => (
-                <p key={course.id} className="text-sm font-medium mb-3">
+                <div key={course.id} className="text-sm font-medium mb-3">
                   {course.imageSrc ? (
                     <LinkPreview url={course.url} imageSrc={course.imageSrc} isStatic={true}>
                       <span className="text-blue-500 underline transition-colors duration-300 ease-in-out hover:text-blue-600">{course.title}</span>
@@ -83,7 +83,7 @@ export default function About() {
                       <span className="text-blue-500 underline transition-colors duration-300 ease-in-out hover:text-blue-600">{course.title}</span>
                     </LinkPreview>
                   )}
-                </p>
+                </div>
               ))}
             </div>
           }
@@ -158,9 +158,9 @@ const Card = ({
         <h2 className="dark:text-white text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
         </h2>
-        <h4 className="dark:text-slate-400 font-semibold text-center text-lg opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+        <div className="dark:text-slate-400 font-semibold text-center text-lg opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {description}
-        </h4>
+        </div>
       </div>
     </div>
   );

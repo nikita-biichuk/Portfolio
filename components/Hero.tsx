@@ -57,6 +57,7 @@ const Hero = () => {
               src="/assets/images/profile/avatar.jpg"
               alt="Nikita Biichuk"
               fill
+              sizes="(max-width: 768px) 11rem, (max-width: 1024px) 12rem, 14rem"
               className={`object-cover object-[50%_65%] transition-opacity duration-300 ${
                 imageLoaded ? "opacity-100" : "opacity-0"
               }`}

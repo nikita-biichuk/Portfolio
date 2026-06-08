@@ -5,7 +5,7 @@ import { Input } from "./ui/Input";
 import { cn } from "@/utils/cn";
 import { sendEmail } from "@/actions/sendEmail.action";
 import { Textarea } from "./ui/TextArea";
-import { useToast } from "./ui/use-toast";
+import { toast } from "sonner";
 import { PhoneInput } from "./ui/PhoneInput";
 
 interface FormData {
@@ -17,7 +17,6 @@ interface FormData {
 }
 
 export function ContactForm() {
-  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstname: "",
@@ -44,11 +43,7 @@ export function ContactForm() {
     try {
       await sendEmail(formData);
       console.log("Email sent successfully");
-      toast({
-        title: "Successfully sent your message. I will contact you soon!",
-        variant: "default",
-        className: "bg-green-500",
-      });
+      toast.success("Successfully sent your message. I will contact you soon!");
       setLoading(false);
       setFormData({
         firstname: "",
@@ -59,11 +54,7 @@ export function ContactForm() {
       });
     } catch (error) {
       console.error("Failed to send email", error);
-      toast({
-        title: "Failed to send your message. Please try again later.",
-        variant: "default",
-        className: "bg-red-500",
-      });
+      toast.error("Failed to send your message. Please try again later.");
       setLoading(false);
       setFormData({
         firstname: "",

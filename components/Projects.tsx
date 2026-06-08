@@ -2,7 +2,6 @@ import React from "react";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/PinContainer";
 import { FaLocationArrow } from "react-icons/fa";
-import Link from "next/link";
 
 const Projects = () => {
   return (
@@ -59,16 +58,11 @@ const Projects = () => {
                       );
                     })}
                   </div>
-                  <div>
-                    <Link
-                      href={link}
-                      className="inline-flex items-center gap-1 hover:text-slate-300 transition-colors ease-in-out duration-300"
-                    >
-                      <p className="text-xs sm:text-sm text-nowrap md:text-lg">
-                        View on <span className="font-semibold">GitHub</span>
-                      </p>
-                      <FaLocationArrow className="ml-1" color="#CBACF9" />
-                    </Link>
+                  <div className="inline-flex items-center gap-1 hover:text-slate-300 transition-colors ease-in-out duration-300">
+                    <p className="text-xs sm:text-sm text-nowrap md:text-lg">
+                      View on <span className="font-semibold">GitHub</span>
+                    </p>
+                    <FaLocationArrow className="ml-1" color="#CBACF9" />
                   </div>
                 </div>
               </PinContainer>
