@@ -45,6 +45,8 @@ const Footer = () => {
                   <Link
                     key={item.id}
                     href={item.link}
+                    target="_blank"
+                    rel="noreferrer noopener"
                     aria-label={t(`socialAlt.${item.id}`)}
                     className="h-10 w-10 flex justify-center items-center rounded-lg border border-border bg-card hover:bg-accent text-foreground opacity-75 hover:opacity-100 transition-all duration-200 ease-in-out"
                   >

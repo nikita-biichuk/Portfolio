@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, m, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/utils/cn";
@@ -53,9 +52,6 @@ export const FloatingNav = ({
     }
     setActiveSection(current2);
   });
-
-  const homeHref = navItems[0]?.link ?? "#";
-
   return (
     <>
       <div className="fixed top-3 left-3 z-[5001] sm:hidden">
@@ -100,14 +96,6 @@ export const FloatingNav = ({
             className
           )}
         >
-          <Link
-            href={homeHref}
-            aria-label="Back to top"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-card/70 transition-colors duration-200 hover:bg-accent"
-          >
-            <Image src="/favicon/favicon.svg" alt="Site logo" width={22} height={22} priority />
-          </Link>
-
           {navItems.map((navItem, idx) => {
             const isActive =
               navItem.link === "#" ? activeSection === "" : "#" + activeSection === navItem.link;
