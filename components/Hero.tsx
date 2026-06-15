@@ -58,7 +58,7 @@ const Hero = () => {
                 alt="Nikita Biichuk"
                 fill
                 sizes="(max-width: 768px) 11rem, (max-width: 1024px) 12rem, 14rem"
-                className={`object-cover object-[50%_65%] transition-opacity duration-300 ${
+                className={`object-cover object-[50%_5%] transition-opacity duration-300 ${
                   imageLoaded ? "opacity-100" : "opacity-0"
                 }`}
                 priority
