@@ -27,7 +27,7 @@ const Hero = () => {
   };
 
   return (
-    <header className="pb-24 pt-36">
+    <header className="relative isolate pb-24 pt-36">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32
@@ -38,7 +38,7 @@ const Hero = () => {
         <Spotlight className="top-30 left-full h-screen w-[40vh] md:w-[60bw]" fill="yellow" />
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
-      <div className="h-screen absolute top-0 left-0 w-full bg-background dark:bg-grid-white bg-grid-black flex items-center justify-center">
+      <div className="absolute inset-0 bg-background dark:bg-grid-white bg-grid-black flex items-center justify-center">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       </div>
       <div className="flex justify-center relative my-20 z-10">

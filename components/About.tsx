@@ -35,7 +35,7 @@ export default function About() {
   const age = calculateAge("2009-06-30");
 
   return (
-    <section id="about" className="w-full py-24 md:py-32">
+    <section id="about" className="relative z-10 w-full py-24 md:py-32">
       <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">
         {t("About.titlePrefix")} <span className="text-gradient">{t("About.titleAccent")}</span>
       </h1>
@@ -194,16 +194,15 @@ const Card = ({
       </AnimatePresence>
 
       <div className="relative z-20 flex h-full w-full flex-col items-center justify-center">
-        <div className="absolute top-[50%] left-[50%] hidden w-full -translate-x-1/2 -translate-y-1/2 justify-center text-center transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 md:flex">
-          {icon}
-        </div>
         <div className="flex flex-col items-center justify-center md:min-h-[9rem]">
-          <div className="mb-5 flex justify-center md:hidden">{icon}</div>
-          <h2 className="relative z-10 text-center text-2xl font-bold text-foreground opacity-100 transition duration-200 md:mt-4 md:text-3xl md:opacity-0 md:group-hover/canvas-card:-translate-y-2 md:group-hover/canvas-card:opacity-100 md:group-hover/canvas-card:text-white">
+          <div className="mb-5 flex justify-center transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0">
+            {icon}
+          </div>
+          <h2 className="relative z-10 text-center text-2xl font-bold text-foreground transition duration-200 md:mt-4 md:text-3xl md:group-hover/canvas-card:-translate-y-2 md:group-hover/canvas-card:text-white">
             {title}
           </h2>
         </div>
-        <div className="relative z-10 mt-6 text-center text-base font-semibold text-muted-foreground opacity-100 transition duration-200 md:mt-4 md:opacity-0 md:group-hover/canvas-card:-translate-y-2 md:group-hover/canvas-card:opacity-100 md:group-hover/canvas-card:text-white/90">
+        <div className="relative z-10 mt-6 text-center text-base font-semibold text-muted-foreground transition duration-200 md:mt-4 md:group-hover/canvas-card:-translate-y-2 md:group-hover/canvas-card:text-white/90">
           {description}
         </div>
       </div>
