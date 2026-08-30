@@ -60,13 +60,13 @@
         "title": "My education",
         "badge": "Education",
         "currentEducationLabel": "Education:",
-        "currentEducationValue": "Just graduated from school! Focusing full-time on web development.",
+        "currentEducationValue": "Currently studying at KPI (IASA), specialty 124 System Analysis.",
         "completedCoursesLabel": "Completed courses:"
       },
       "personal": {
         "title": "Something personal about me",
         "badge": "Personal info",
-        "description": "Hi, I'm Nikita, a {age}-year-old developer. I just graduated from school and am fully focused on building great software. I have been wrestling for 8 years, which has taught me discipline and perseverance. My hobbies include mountain biking, reading, and gaming. I'm known for being responsible, kind, and dedicated, always striving to give my best in everything I do."
+        "description": "Hi, I'm Nikita, a {age}-year-old developer. I'm currently studying at KPI at IASA, specialty 124 System Analysis, and building software alongside my studies. I have been wrestling for 9 years, which has taught me discipline and perseverance. My hobbies include mountain biking, reading, and gaming. I'm known for being responsible, kind, and dedicated, always striving to give my best in everything I do."
       }
     }
   },
@@ -75,6 +75,7 @@
     "webDevBootcamp": "The Complete 2023 Web Development Bootcamp",
     "reactGuide": "React - The Complete Guide (incl Hooks, React Router, Redux)",
     "nextCourse": "The Ultimate Next.js Course",
+    "agenticEngineering": "Agentic Engineering Course",
     "unityCourse": "Unity Platformer Course"
   },
   "WorkExperience": {
@@ -96,7 +97,12 @@
     "titleAccent": "Top Projects",
     "viewOn": "View on",
     "github": "GitHub",
+    "closedSource": "Code isn't open source",
     "items": {
+      "interactiveMapsCity": {
+        "title": "Interactive Maps City",
+        "description": "A collaborative map platform for city utility teams to plan, draw, and maintain infrastructure on shared workspaces. Multiple editors can work on the same map at once — with live cursors, instant updates, role-based access, and a nested project structure for organizing work at scale. Built for heavy use: large maps, many objects, and reliable backups with preview and restore, plus an admin panel for users, activity, and system oversight."
+      },
       "stackOverflowClone": {
         "title": "Modern StackOverflow clone",
         "description": "This project includes user authentication, question and answer functionality, and a rich text editor for creating and editing posts."

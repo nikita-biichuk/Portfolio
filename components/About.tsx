@@ -3,14 +3,9 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, m } from "framer-motion";
-import dynamic from "next/dynamic";
 
 import { courses } from "@/data";
-
-const CanvasRevealEffect = dynamic(
-  () => import("./ui/CanvasRevealEffect").then((mod) => ({ default: mod.CanvasRevealEffect })),
-  { ssr: false, loading: () => null }
-);
+import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 import { LinkPreview } from "./ui/link-preview";
 
 export default function About() {
@@ -64,17 +59,10 @@ export default function About() {
             </div>
           }
           icon={
-            <AceternityIcon title={t("About.cards.skills.badge")} accentClass="text-violet-400" />
+            <CardBadge title={t("About.cards.skills.badge")} accentClass="text-violet-400" />
           }
         >
-          <CanvasRevealEffect
-            animationSpeed={5.1}
-            containerClassName="bg-violet-950"
-            colors={[
-              [139, 92, 246],
-              [99, 102, 241],
-            ]}
-          />
+          <CanvasRevealEffect containerClassName="bg-violet-950" />
         </Card>
 
         {/* Education — emerald / teal */}
@@ -114,21 +102,10 @@ export default function About() {
             </div>
           }
           icon={
-            <AceternityIcon
-              title={t("About.cards.education.badge")}
-              accentClass="text-emerald-400"
-            />
+            <CardBadge title={t("About.cards.education.badge")} accentClass="text-emerald-400" />
           }
         >
-          <CanvasRevealEffect
-            animationSpeed={4}
-            containerClassName="bg-emerald-950"
-            colors={[
-              [16, 185, 129],
-              [20, 184, 166],
-            ]}
-            dotSize={2}
-          />
+          <CanvasRevealEffect containerClassName="bg-emerald-950" />
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-background/60" />
         </Card>
 
@@ -138,17 +115,10 @@ export default function About() {
           hoverClass="hover:border-rose-500/50 hover:shadow-[0_0_40px_-10px_rgba(244,63,94,0.6)]"
           description={t("About.cards.personal.description", { age })}
           icon={
-            <AceternityIcon title={t("About.cards.personal.badge")} accentClass="text-rose-400" />
+            <CardBadge title={t("About.cards.personal.badge")} accentClass="text-rose-400" />
           }
         >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-rose-950"
-            colors={[
-              [244, 63, 94],
-              [251, 146, 60],
-            ]}
-          />
+          <CanvasRevealEffect containerClassName="bg-rose-950" />
         </Card>
       </div>
     </section>
@@ -210,7 +180,7 @@ const Card = ({
   );
 };
 
-const AceternityIcon = ({ title, accentClass }: { title: string; accentClass?: string }) => {
+const CardBadge = ({ title, accentClass }: { title: string; accentClass?: string }) => {
   return (
     <button
       className={`text-2xl px-6 inline-flex h-16 animate-shimmer items-center justify-center rounded-md border border-border bg-[linear-gradient(110deg,var(--color-card),45%,var(--color-accent),55%,var(--color-card))] bg-[length:200%_100%] font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background ${accentClass ?? "text-muted-foreground"}`}

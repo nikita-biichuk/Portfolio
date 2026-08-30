@@ -12,11 +12,11 @@ const Projects = () => {
   const t = useTranslations("Projects");
 
   return (
-    <section id="projects" className="w-full py-24 md:py-32">
-      <h1 className="text-3xl md:text-5xl text-center text-foreground font-bold">
+    <section id="projects" className="w-full py-20 md:py-28">
+      <h1 className="text-center text-3xl font-bold text-foreground md:text-5xl">
         {t("titlePrefix")} <span className="text-gradient">{t("titleAccent")}</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center gap-x-24 gap-y-20 lg:gap-y-16 mt-14">
+      <div className="mt-14 grid justify-items-center gap-x-8 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
         {projects.map(({ id, img, iconLists, link }, idx) => {
           const title = t(`items.${id}.title`);
 
@@ -24,21 +24,19 @@ const Projects = () => {
             <AnimateOnView
               key={id}
               delay={0.05 + idx * 0.07}
-              className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-[420px] w-[80vw]"
+              className="flex h-[27rem] w-full max-w-[25rem] items-center justify-center"
             >
-              <PinContainer title={link} href={link}>
+              <PinContainer title={link ?? title} href={link}>
                 <div
-                  className="flex justify-center items-center
-                 relative sm:w-[420px] w-[80vw]
-                 overflow-hidden h-[25vh] lg:h-[32.5vh] mb-10"
+                  className="relative mb-7 flex h-56 w-[min(78vw,23rem)] items-center justify-center overflow-hidden rounded-lg border border-border bg-card"
                 >
-                  <div className="relative w-full h-full rounded-3xl overflow-hidden bg-[#13162D]">
+                  <div className="relative h-full w-full overflow-hidden">
                     <Image
                       src="/assets/images/backgrounds/bg.png"
                       alt=""
                       fill
                       sizes="(max-width: 640px) 80vw, 420px"
-                      className="object-cover"
+                      className="object-cover opacity-75"
                     />
                   </div>
                   <div className="absolute inset-0 z-10">
@@ -47,35 +45,51 @@ const Projects = () => {
                       alt={title}
                       fill
                       sizes="(max-width: 640px) 80vw, 420px"
-                      className="object-contain object-bottom"
+                      className="object-contain object-bottom p-4 transition duration-500 group-hover/pin:scale-[1.03]"
                     />
                   </div>
                 </div>
-                <div className="flex flex-col flex-2">
-                  <h1 className="font-bold lg:text-2xl md:text-xl text-lg line-clamp-1">{title}</h1>
-                  <p className="lg:text-xl font-normal text-sm line-clamp-2">
+                <div className="flex min-h-28 flex-col">
+                  <h2 className="line-clamp-1 text-lg font-bold leading-tight md:text-xl">
+                    {title}
+                  </h2>
+                  <p className="mt-3 line-clamp-3 text-sm font-normal leading-6 text-muted-foreground">
                     {t(`items.${id}.description`)}
                   </p>
                 </div>
-                <div className="flex items-center justify-between mt-7 mb-3">
+                <div className="mb-2 mt-6 flex items-center justify-between gap-4">
                   <div className="flex items-center">
-                    {iconLists.map((icon) => {
+                    {iconLists.slice(0, 5).map((icon) => {
                       return (
                         <div
                           key={icon}
-                          className="border border-border rounded-full bg-zinc-900
-                        lg:w-10 lg:h-10 h-8 w-8 flex justify-center items-center"
+                          className="-ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-zinc-950 first:ml-0 lg:h-10 lg:w-10"
                         >
-                          <Image src={`/assets/${icon}`} alt={icon} className="p-1" width={32} height={32} style={{ height: "auto" }} />
+                          <Image
+                            src={`/assets/${icon}`}
+                            alt={icon}
+                            className="p-1"
+                            width={32}
+                            height={32}
+                            style={{ height: "auto" }}
+                          />
                         </div>
                       );
                     })}
                   </div>
-                  <div className="inline-flex items-center gap-1 hover:text-slate-300 transition-colors ease-in-out duration-300">
-                    <p className="text-xs sm:text-sm text-nowrap md:text-lg">
-                      {t("viewOn")} <span className="font-semibold">{t("github")}</span>
-                    </p>
-                    <FaLocationArrow className="ml-1 text-primary" />
+                  <div className="inline-flex items-center gap-1 text-primary transition-colors duration-300 ease-in-out hover:text-foreground">
+                    {link ? (
+                      <>
+                        <p className="text-nowrap text-xs font-semibold sm:text-sm">
+                          {t("viewOn")} <span className="font-semibold">{t("github")}</span>
+                        </p>
+                        <FaLocationArrow className="ml-1 text-primary" />
+                      </>
+                    ) : (
+                      <p className="text-xs font-semibold text-muted-foreground sm:text-sm">
+                        {t("closedSource")}
+                      </p>
+                    )}
                   </div>
                 </div>
               </PinContainer>

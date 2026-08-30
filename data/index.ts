@@ -8,7 +8,7 @@ type Project = {
   id: string;
   img: string;
   iconLists: string[];
-  link: string;
+  link?: string;
 };
 
 type WorkExperience = {
@@ -48,9 +48,24 @@ export const courses: readonly Course[] = [
     url: "https://www.udemy.com/course/platformer-alexdev",
     imageSrc: "/assets/images/courses/unity-platformer-course.png",
   },
+  {
+    id: "agenticEngineering",
+    url: "https://jsmastery.com/course/agentic-engineering-course",
+  },
 ] as const;
 
 export const projects: readonly Project[] = [
+  {
+    id: "interactiveMapsCity",
+    img: "/assets/images/projects/interactive-maps-city.png",
+    iconLists: [
+      "icons/tech/next.svg",
+      "icons/tech/re.svg",
+      "icons/tech/tail.svg",
+      "icons/tech/ts.svg",
+      "icons/tech/node1.svg",
+    ],
+  },
   {
     id: "stackOverflowClone",
     img: "/assets/images/projects/stack.png",
