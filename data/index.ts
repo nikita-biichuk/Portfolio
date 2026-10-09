@@ -9,6 +9,7 @@ type Project = {
   img: string;
   iconLists: string[];
   link?: string;
+  presentationLink?: string;
 };
 
 type WorkExperience = {
@@ -65,6 +66,7 @@ export const projects: readonly Project[] = [
       "icons/tech/ts.svg",
       "icons/tech/node1.svg",
     ],
+    presentationLink: "https://interactive-map-pipelines-in-a-city.vercel.app/uk/presentation",
   },
   {
     id: "stackOverflowClone",

@@ -17,7 +17,7 @@ const Projects = () => {
         {t("titlePrefix")} <span className="text-gradient">{t("titleAccent")}</span>
       </h1>
       <div className="mt-14 grid justify-items-center gap-x-8 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map(({ id, img, iconLists, link }, idx) => {
+        {projects.map(({ id, img, iconLists, link, presentationLink }, idx) => {
           const title = t(`items.${id}.title`);
 
           return (
@@ -26,7 +26,10 @@ const Projects = () => {
               delay={0.05 + idx * 0.07}
               className="flex h-[27rem] w-full max-w-[25rem] items-center justify-center"
             >
-              <PinContainer title={link ?? title} href={link}>
+              <PinContainer
+                title={link ?? presentationLink ?? title}
+                href={link ?? presentationLink}
+              >
                 <div
                   className="relative mb-7 flex h-56 w-[min(78vw,23rem)] items-center justify-center overflow-hidden rounded-lg border border-border bg-card"
                 >

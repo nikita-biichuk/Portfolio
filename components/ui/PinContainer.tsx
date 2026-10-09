@@ -54,10 +54,14 @@ export const PinContainer = ({
   );
 
   if (href) {
+    const isExternal = /^https?:\/\//.test(href);
+
     return (
       <Link
         className={containerClass}
         href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
